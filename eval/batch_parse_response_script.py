@@ -3,7 +3,7 @@ import re
 import os
 import sys
 from utils.file_util import read_json_file, write_json_to_file, iter_file_from_dir
-from chat_metric_utils import *
+from eval.chat_metric_utils import *
 import pandas as pd
 import matplotlib.pyplot as plt
 
