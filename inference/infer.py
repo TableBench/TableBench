@@ -2,7 +2,7 @@ import vllm
 import argparse
 import os 
 import json 
-import utils
+import utils.utils as utils
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import transformers
 import torch
