@@ -25,6 +25,7 @@ Official repository for paper "TableBench: A Comprehensive and Complex Benchmark
   - [Results](#results)
   - [Data](#data)
   - [License](#license)
+  - [Citation](#citation)
 
 ## Introduction
 **TableBench** is a comprehensive and complex benchmark covering **18** fields within four major categories of table question answering (TableQA) capabilitiesm with **886** test samples, which substantially pushes the limits of LLMs in TableQA scenarios.
@@ -75,17 +76,16 @@ Refer to our <a href="https://tablebench.github.io/leaderboard.html">🏆 Leader
 ## License
 This code repository is licensed under the [the MIT License](LICENSE-CODE). The use of McEval data is subject to the [CC-BY-SA-4.0](LICENSE-DATA).
 
-<!-- ## Citation
+## Citation
 If you find our work helpful, please use the following citations.
 ```bibtext
-@article{mceval,
-  title={McEval: Massively Multilingual Code Evaluation},
-  author={Chai, Linzheng and Liu, Shukai and Yang, Jian and Yin, Yuwei and Jin, Ke and Liu, Jiaheng and Sun, Tao and Zhang, Ge and Ren, Changyu and Guo, Hongcheng and others},
-  journal={arXiv e-prints},
-  pages={arXiv--2406},
+@article{wu2024tablebench,
+  title={TableBench: A Comprehensive and Complex Benchmark for Table Question Answering},
+  author={Wu, Xianjie and Yang, Jian and Chai, Linzheng and Zhang, Ge and Liu, Jiaheng and Du, Xinrun and Liang, Di and Shu, Daixin and Cheng, Xianfu and Sun, Tianzhen and others},
+  journal={arXiv preprint arXiv:2408.09174},
   year={2024}
 }
-``` -->
+```
 
 
 
