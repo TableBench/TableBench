@@ -64,7 +64,7 @@ def run(args):
             prompt = output.prompt
             generated_texts = [item.text for item in output.outputs ]
 
-            raw_datas[idx]["raw_generation"] = generated_texts
+            raw_datas[idx]["prediction"] = generated_texts
 
 
         save_path = os.path.join(args.outdir, args.base_model.split('/')[-1]+'_'+filename.split('.')[0]+'.jsonl')
