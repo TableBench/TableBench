@@ -63,11 +63,14 @@ This code repository is licensed under the [the MIT License](LICENSE-CODE). The 
 ## Citation
 If you find our work helpful, please use the following citations.
 ```bibtext
-@article{wu2024tablebench,
-  title={TableBench: A Comprehensive and Complex Benchmark for Table Question Answering},
-  author={Wu, Xianjie and Yang, Jian and Chai, Linzheng and Zhang, Ge and Liu, Jiaheng and Du, Xinrun and Liang, Di and Shu, Daixin and Cheng, Xianfu and Sun, Tianzhen and others},
-  journal={arXiv preprint arXiv:2408.09174},
-  year={2024}
+@misc{wu2025tablebenchcomprehensivecomplexbenchmark,
+      title={TableBench: A Comprehensive and Complex Benchmark for Table Question Answering}, 
+      author={Xianjie Wu and Jian Yang and Linzheng Chai and Ge Zhang and Jiaheng Liu and Xinrun Du and Di Liang and Daixin Shu and Xianfu Cheng and Tianzhen Sun and Guanglin Niu and Tongliang Li and Zhoujun Li},
+      year={2025},
+      eprint={2408.09174},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2408.09174}, 
 }
 ```
 
