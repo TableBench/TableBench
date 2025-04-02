@@ -21,8 +21,7 @@ Official repository for paper "TableBench: A Comprehensive and Complex Benchmark
 - [TableBench](#tablebench)
   - [Table of contents](#table-of-contents)
   - [Introduction](#introduction)
-    - [Task Examples](#task-examples)
-  - [Results](#results)
+  - [Task Examples](#task-examples)
   - [Data](#data)
   - [License](#license)
   - [Citation](#citation)
@@ -34,7 +33,7 @@ Official repository for paper "TableBench: A Comprehensive and Complex Benchmark
 </p>
 
 
-### Task Examples
+## Task Examples
 <p align="center">
 <img src="assets/example.png" width="80%" alt="McEval" />
 </p>
@@ -42,22 +41,7 @@ Official repository for paper "TableBench: A Comprehensive and Complex Benchmark
 <!-- ### Languages
 `['AWK','C','CPP','C#','CommonLisp','CoffeeScript','Dart','EmacsLisp','Elixir','Erlang','Fortran','F#','Go','Groovy','Haskell','HTML','Java','JavaScript','JSON','Julia','Kotlin','Lua','Markdown','Pascal','Perl','PHP','PowerShell','Python','R','Racket','Ruby','Rust','Scala','Scheme','Shell','Swift','Tcl','TypeScript','VisualBasic','VimScript']` -->
 
-Furthermore, we curate massively instruction corpora **TableInstruct**.
-
 Refer to our paper for more details. 
-
-## Results 
-<p align="center">
-<img src="assets/overall_results.png" width="100%" alt="McEval" />
-</p>
-
-<p align="center">
-<img src="assets/radar_more.png" width="100%" alt="McEval" />
-</p>
-
-
-Refer to our <a href="https://tablebench.github.io/leaderboard.html">🏆 Leaderboard </a>  for more results.
-
 
 ## Data
 <div align="center">
@@ -74,7 +58,7 @@ Refer to our <a href="https://tablebench.github.io/leaderboard.html">🏆 Leader
 
 
 ## License
-This code repository is licensed under the [the MIT License](LICENSE-CODE). The use of McEval data is subject to the [CC-BY-SA-4.0](LICENSE-DATA).
+This code repository is licensed under the [the MIT License](LICENSE-CODE). The use of TableBench data is subject to the [Apache license 2.0](LICENSE-DATA).
 
 ## Citation
 If you find our work helpful, please use the following citations.
