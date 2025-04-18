@@ -27,7 +27,7 @@ Official repository for paper `TableBench: A Comprehensive and Complex Benchmark
 >  We’ve released an cleaner version of TableBench, after thoroughly reviewing all test set cases and correcting any errors we identified. Please download the latest version of [TableBench](https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableBench) for the most accurate dataset.
 >
 > 2. **🚀 Brand New Leaderboard**:
-> The brand new [Leaderboard](https://tablebench.github.io/) is now live! We’re excited to invite submissions, which will be dynamically updated in real-time. For submission guidelines, please refer to the Submission section on the leaderboard website.
+> The brand new [Leaderboard](https://tablebench.github.io/) is now live! We've included the performance of many newly released models in our latest leaderboard and will continue to keep it up to date. Submissions are welcome! For submission guidelines, please refer to the Submission section.
 >
 > 3. **🔍 Refined Evaluation Metrics**:
 > In response to community feedback and in-depth discussions, we've updated the evaluation metrics for Fact Checking, Numerical Reasoning, and Data Analysis. You can find the detailed specifications of these new metrics in Section `📐 Evaluation Metrics`
