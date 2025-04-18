@@ -1,0 +1,2 @@
+model_name	instruction_type	FactChecking	NumericalReasoning	DataAnalysis	Visualization	Overall
+o3-mini-2025-01-31	DP	83.33	87.5	26.17	33.33	58.34

@@ -1,0 +1,41 @@
+{
+    "o3-mini-2025-01-31/DP": {
+        "FactChecking": {
+            "EM": 83.33,
+            "EM_with_error_2": 83.33,
+            "EM_with_error_5": 83.33,
+            "EM_with_error_10": 83.33,
+            "ROUGE-L": 96.67,
+            "Parse@1": 100.0,
+            "total": 6
+        },
+        "NumericalReasoning": {
+            "EM": 87.5,
+            "EM_with_error_2": 87.5,
+            "EM_with_error_5": 87.5,
+            "EM_with_error_10": 87.5,
+            "ROUGE-L": 87.5,
+            "Parse@1": 100.0,
+            "total": 24
+        },
+        "DataAnalysis": {
+            "EM": 14.29,
+            "EM_with_error_2": 14.29,
+            "EM_with_error_5": 14.29,
+            "EM_with_error_10": 14.29,
+            "ROUGE-L": 37.06,
+            "Mix_Metric": 26.17,
+            "Parse@1": 100.0,
+            "total": 21
+        },
+        "Visualization": {
+            "total": 3,
+            "ECR@1": 100.0,
+            "Pass@1": 33.33
+        },
+        "Overall": {
+            "Mix_Metric": 58.34,
+            "Parse@1": 100.0
+        }
+    }
+}

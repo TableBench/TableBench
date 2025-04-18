@@ -1,0 +1,163 @@
+{
+    "o3-mini-2025-01-31/DP": {
+        "NumericalReasoning_Aggregation": {
+            "EM": 66.67,
+            "EM_with_error_2": 66.67,
+            "EM_with_error_5": 66.67,
+            "EM_with_error_10": 66.67,
+            "ROUGE-L": 66.67,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "FactChecking_MatchBased": {
+            "EM": 100.0,
+            "EM_with_error_2": 100.0,
+            "EM_with_error_5": 100.0,
+            "EM_with_error_10": 100.0,
+            "ROUGE-L": 100.0,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "Visualization_ChartGeneration": {
+            "total": 3,
+            "ECR@1": 100.0,
+            "Pass@1": 33.33,
+            "Parse@1": 100.0
+        },
+        "DataAnalysis_ImpactAnalysis": {
+            "EM": 33.33,
+            "EM_with_error_2": 33.33,
+            "EM_with_error_5": 33.33,
+            "EM_with_error_10": 33.33,
+            "ROUGE-L": 52.38,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "DataAnalysis_CausalAnalysis": {
+            "EM": 0.0,
+            "EM_with_error_2": 0.0,
+            "EM_with_error_5": 0.0,
+            "EM_with_error_10": 0.0,
+            "ROUGE-L": 33.0,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "NumericalReasoning_Multi-hop NumericalReasoing": {
+            "EM": 66.67,
+            "EM_with_error_2": 66.67,
+            "EM_with_error_5": 66.67,
+            "EM_with_error_10": 66.67,
+            "ROUGE-L": 66.67,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "FactChecking_Multi-hop FactChecking": {
+            "EM": 66.67,
+            "EM_with_error_2": 66.67,
+            "EM_with_error_5": 66.67,
+            "EM_with_error_10": 66.67,
+            "ROUGE-L": 93.33,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "NumericalReasoning_Counting": {
+            "EM": 100.0,
+            "EM_with_error_2": 100.0,
+            "EM_with_error_5": 100.0,
+            "EM_with_error_10": 100.0,
+            "ROUGE-L": 100.0,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "DataAnalysis_DescriptiveAnalysis": {
+            "EM": 0.0,
+            "EM_with_error_2": 0.0,
+            "EM_with_error_5": 0.0,
+            "EM_with_error_10": 0.0,
+            "ROUGE-L": 32.58,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "DataAnalysis_AnomalyDetection": {
+            "EM": 0.0,
+            "EM_with_error_2": 0.0,
+            "EM_with_error_5": 0.0,
+            "EM_with_error_10": 0.0,
+            "ROUGE-L": 17.04,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "NumericalReasoning_Domain-Specific": {
+            "EM": 100.0,
+            "EM_with_error_2": 100.0,
+            "EM_with_error_5": 100.0,
+            "EM_with_error_10": 100.0,
+            "ROUGE-L": 100.0,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "NumericalReasoning_Time-basedCalculation": {
+            "EM": 100.0,
+            "EM_with_error_2": 100.0,
+            "EM_with_error_5": 100.0,
+            "EM_with_error_10": 100.0,
+            "ROUGE-L": 100.0,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "NumericalReasoning_ArithmeticCalculation": {
+            "EM": 100.0,
+            "EM_with_error_2": 100.0,
+            "EM_with_error_5": 100.0,
+            "EM_with_error_10": 100.0,
+            "ROUGE-L": 100.0,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "DataAnalysis_CorrelationAnalysis": {
+            "EM": 33.33,
+            "EM_with_error_2": 33.33,
+            "EM_with_error_5": 33.33,
+            "EM_with_error_10": 33.33,
+            "ROUGE-L": 67.86,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "NumericalReasoning_Ranking": {
+            "EM": 100.0,
+            "EM_with_error_2": 100.0,
+            "EM_with_error_5": 100.0,
+            "EM_with_error_10": 100.0,
+            "ROUGE-L": 100.0,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "DataAnalysis_TrendForecasting": {
+            "EM": 33.33,
+            "EM_with_error_2": 33.33,
+            "EM_with_error_5": 33.33,
+            "EM_with_error_10": 33.33,
+            "ROUGE-L": 55.56,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "DataAnalysis_StatisticalAnalysis": {
+            "EM": 0.0,
+            "EM_with_error_2": 0.0,
+            "EM_with_error_5": 0.0,
+            "EM_with_error_10": 0.0,
+            "ROUGE-L": 0.0,
+            "total": 3,
+            "Parse@1": 100.0
+        },
+        "NumericalReasoning_Comparison": {
+            "EM": 66.67,
+            "EM_with_error_2": 66.67,
+            "EM_with_error_5": 66.67,
+            "EM_with_error_10": 66.67,
+            "ROUGE-L": 66.67,
+            "total": 3,
+            "Parse@1": 100.0
+        }
+    }
+}
