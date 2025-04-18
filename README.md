@@ -11,10 +11,13 @@
 Official repository for paper `TableBench: A Comprehensive and Complex Benchmark for Table Question Answering`
 
 <p align="left">
-    <a href="https://tablebench.github.io/">🏆  Leaderboard&nbsp;&nbsp;</a> 
-    <a href="https://arxiv.org/abs/2408.09174">📚 Paper&nbsp;&nbsp;</a>
-    <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableBench">🤗 TableBench&nbsp;&nbsp;</a> 
-    <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableInstruct">🤗 TableInstruct&nbsp;&nbsp;</a> 
+    <a href="https://arxiv.org/abs/2408.09174">📚 Paper</a>
+    &nbsp;&nbsp;
+    <a href="https://tablebench.github.io/">🏆  Leaderboard</a> 
+    &nbsp;&nbsp;
+    <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableBench">🤗 TableBench</a> 
+    &nbsp;&nbsp;
+    <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableInstruct">🤗 TableInstruct</a> 
 </p>
 
 ## News
