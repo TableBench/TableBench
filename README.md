@@ -7,14 +7,14 @@
     <img alt="Data License" src="https://img.shields.io/badge/Data_License-CC--BY--SA--4.0-f5de53%3F?color=blue" style="display: inline-block; vertical-align: middle;"/>
   </a>
 </div>
+
 Official repository for paper `TableBench: A Comprehensive and Complex Benchmark for Table Question Answering`
 
 <p align="left">
-    <a href="https://tablebench.github.io/">🏆  Leaderboard </a> 
-    <a href="https://arxiv.org/abs/2408.09174">📚 Paper </a>
-    <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableBench">🤗 TableBench</a> 
-    <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableInstruct">🤗 TableInstruct</a> 
-
+    <a href="https://tablebench.github.io/">🏆  Leaderboard&nbsp;&nbsp;</a> 
+    <a href="https://arxiv.org/abs/2408.09174">📚 Paper&nbsp;&nbsp;</a>
+    <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableBench">🤗 TableBench&nbsp;&nbsp;</a> 
+    <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableInstruct">🤗 TableInstruct&nbsp;&nbsp;</a> 
 </p>
 
 ## News
