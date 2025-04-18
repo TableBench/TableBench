@@ -63,11 +63,11 @@ This module defines evaluation metrics for various sub-tasks:
 
 | Task Type               | Metric            | Description                                                |
 |------------------------|-------------------|------------------------------------------------------------|
+| Impact Analysis        | Exact Match (EM)  | Requires precise match of influential factors              |
 | Correlation Analysis   | EM_with_error_10  | Allows ±10% numerical margin of error                      |
 | Trend Forecasting      | EM_with_error_10  | Allows ±10% numerical margin of error                      |
 | Statistical Analysis   | EM_with_error_10  | Allows ±10% numerical margin of error                      |
-| Impact Analysis        | Exact Match (EM)  | Requires precise match of influential factors              |
-| Other Data Tasks       | ROUGE-L           | Suitable for open-ended, textual responses                 |
+| Other Data Analysis Tasks       | ROUGE-L           | Suitable for open-ended, textual responses                 |
 
 ### 📊 Visualization
 - **Metric:** Pass@1  
