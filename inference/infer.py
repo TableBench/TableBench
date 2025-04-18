@@ -65,7 +65,7 @@ def run(args):
             generated_texts = [item.text for item in output.outputs ]
 
             raw_datas[idx]["prediction"] = generated_texts
-
+            raw_datas[idx]["model_name"] = "Your model name"
 
         save_path = os.path.join(args.outdir, args.base_model.split('/')[-1]+'_'+filename.split('.')[0]+'.jsonl')
 
