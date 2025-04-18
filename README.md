@@ -27,7 +27,7 @@ Official repository for paper `TableBench: A Comprehensive and Complex Benchmark
 > The brand new [Leaderboard](https://tablebench.github.io/) is now live! We’re excited to invite submissions, which will be dynamically updated in real-time. For submission guidelines, please refer to the Submission section in the leaderboard website.
 >
 > 3. **🔍 Refined Evaluation Metrics**:
-> In response to community feedback and in-depth discussions, we've updated the evaluation metrics for Fact Checking, Numerical Reasoning, and Data Analysis. You can find the detailed specifications of these new metrics here.
+> In response to community feedback and in-depth discussions, we've updated the evaluation metrics for Fact Checking, Numerical Reasoning, and Data Analysis. You can find the detailed specifications of these new metrics in Section `📐 Evaluation Metrics`
 >
 > **🚀Jan. 21, 2025🚀**: 
 > 
