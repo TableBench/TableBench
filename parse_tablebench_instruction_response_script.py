@@ -1,20 +1,20 @@
-import json
 import re
 import os
 import sys
 from utils.file_util import read_json_file, write_json_to_file, iter_file_from_dir
-from eval.chat_metric_utils import *
+from metrics.chart_metric_utils import *
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import ast
 from wrapt_timeout_decorator import *
 
 
 @timeout(15)
+# In case an infinite loop occurs
 def execute(c):
     exec(c)
 
-# ==== prediction Parsers ===
+# ==== Prediction Parsers ===
 
 
 def parse_dp_prediction(prediction):
@@ -53,6 +53,17 @@ def parse_code_output_prediction(prediction):
         return ''
 
 
+def pre_save_table_to_csv(table):
+    table_json = []
+    for item in table['data']:
+        row_data = {}
+        for i in range(len(table['columns'])):
+            row_data[table['columns'][i]] = item[i]
+        table_json.append(row_data)
+    df = pd.DataFrame(table_json)
+    df.to_csv('table.csv', index=False)
+
+
 def build_chart_eval_code(sample):
     answer = sample['answer']
     chart_type = sample['chart_type']
@@ -84,21 +95,10 @@ if chart_type == 'pie':
 else:
     print(compute_general_chart_metric(y_references, y_predictions))
     '''
-    chart_eval_code = f'from chat_metric_utils import *\n{python_code}\n{answer}\nchart_type="{chart_type}"\n{eval_code}'
+    chart_eval_code = f'from metrics.chart_metric_utils import *\n{python_code}\n{answer}\nchart_type="{chart_type}"\n{eval_code}'
     if python_code == '':
         return '', ''
     return python_code, chart_eval_code
-
-
-def pre_save_table_to_csv(table):
-    table_json = []
-    for item in table['data']:
-        row_data = {}
-        for i in range(len(table['columns'])):
-            row_data[table['columns'][i]] = item[i]
-        table_json.append(row_data)
-    df = pd.DataFrame(table_json)
-    df.to_csv('table.csv', index=False)
 
 
 def surround_pycode_with_main(pycode):
@@ -130,12 +130,17 @@ def parse_general_code_then_exec(prediction):
         ecr_1 = True
     except Exception as e:
         output_value = ''
+
     if output_value != '':
         parsed_prediction = parse_code_output_prediction(output_value)
     else:
         parsed_prediction = ''
-    return parsed_prediction, ecr_1
 
+    # Fix some output without "Final Answer:"
+    if parsed_prediction == '' and output_value != '':
+        parsed_prediction = output_value.strip()
+
+    return parsed_prediction, ecr_1
 
 def parse_chart_code_then_exec(sample):
     ecr_1 = False
@@ -168,73 +173,75 @@ def parse_chart_code_then_exec(sample):
         parsed_prediction = output_value.strip()
     else:
         parsed_prediction = ''
+
+    parsed_prediction = {'True': True, 'False': False}.get(
+        parsed_prediction, '')
+
     plt.close('all')
     return parsed_prediction, ecr_1
 
 
+def parse_inference_results(inference_results):
+    # === Start parsing ===
+    parsed_results = []
+    for sample in inference_results:
+        table = sample['table']
+        prediction = sample['prediction']
+        instruction_type = sample['instruction_type']
+        if instruction_type == 'SCoT' or instruction_type == 'TCoT' or instruction_type == 'DP':
+            qtype = sample['qtype']
+            if qtype == 'Visualization':
+                pre_save_table_to_csv(table)
+                parsed_prediction, ecr_1 = parse_chart_code_then_exec(
+                    sample)
+                parsed_result = {
+                    'parsed_prediction': parsed_prediction, 'ecr_1': ecr_1}
+            else:
+                parsed_prediction = parse_dp_prediction(prediction)
+                parsed_result = {
+                    'parsed_prediction': parsed_prediction}
+        elif instruction_type == 'PoT':
+            pre_save_table_to_csv(table)
+            qtype = sample['qtype']
+            if qtype == 'Visualization':
+                parsed_prediction, ecr_1 = parse_chart_code_then_exec(
+                    sample)
+            else:
+                parsed_prediction, ecr_1 = parse_general_code_then_exec(
+                    prediction)
+            parsed_result = {
+                'parsed_prediction': parsed_prediction, 'ecr_1': ecr_1}
+
+        # Process successful parsing ratio
+        if parsed_prediction == '':
+            parsed_result['Parse@1'] = False
+        else:
+            parsed_result['Parse@1'] = True
+
+        # Save parsed result
+        sample['parsed_result'] = parsed_result
+        parsed_results.append(sample)
+    return parsed_results
+
+
 if __name__ == '__main__':
     # ==== Global settings ====
-    RPOJECT_ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-    exp_version = '20240730_hf'
-    INFERENCE_RESULT_DIR = f'{RPOJECT_ROOT_DIR}/experiment_results/{exp_version}/inference_results'
-    PARSED_RUSULT_DIR = f'{RPOJECT_ROOT_DIR}/experiment_results/{exp_version}/parsed_results'
+    PROJECT_ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+    EXP_DIR = 'eval_examples'
+
+    INFERENCE_RESULT_DIR = f'{PROJECT_ROOT_DIR}/{EXP_DIR}/inference_results'
+    PARSED_RUSULT_DIR = f'{PROJECT_ROOT_DIR}/{EXP_DIR}/parsed_results'
 
     # ==== Load inference results ====
-    process_models = []
-    for dir in os.listdir(INFERENCE_RESULT_DIR):
-        for infernce_result_file in iter_file_from_dir(f'{INFERENCE_RESULT_DIR}/{dir}', '.jsonl'):
-            model_name = os.path.basename(infernce_result_file).split('_')[0]
-            if len(process_models) != 0:
-                if model_name not in process_models:
-                    continue
-            print(f'Processing {infernce_result_file}...')
-            inference_results = read_json_file(infernce_result_file)
-            if not isinstance(inference_results, list):
-                inference_results = [inference_results]
-            parsed_results = []
-            infernce_result_file_name = os.path.basename(
-                infernce_result_file).replace('.jsonl', '')
-            if 'TableBench_PoT' in infernce_result_file_name:
-                prompt_type = 'PoT'
-            elif 'TableBench_SCoT' in infernce_result_file_name:
-                prompt_type = 'SCoT'
-            elif 'TableBench_TCoT' in infernce_result_file_name:
-                prompt_type = 'TCoT'
-            elif 'TableBench_DP' in infernce_result_file_name:
-                prompt_type = 'DP'
-            for result in inference_results:
-                table = result['table']
-                table = json.loads(table)
-                prediction = result['prediction']
-                if prompt_type == 'SCoT' or prompt_type == 'TCoT' or prompt_type == 'DP':
-                    qtype = result['qtype']
-                    if qtype == 'Visualization':
-                        pre_save_table_to_csv(table)
-                        parsed_prediction, ecr_1 = parse_chart_code_then_exec(
-                            result)
-                        parsed_result = {
-                            'parsed_prediction': parsed_prediction, 'ecr_1': ecr_1}
-                    else:
-                        parsed_prediction = parse_dp_prediction(prediction)
-                        parsed_result = {
-                            'parsed_prediction': parsed_prediction}
-                elif prompt_type == 'PoT':
-                    pre_save_table_to_csv(table)
-                    qtype = result['qtype']
-                    if qtype == 'Visualization':
-                        parsed_prediction, ecr_1 = parse_chart_code_then_exec(
-                            result)
-                    else:
-                        parsed_prediction, ecr_1 = parse_general_code_then_exec(
-                            prediction)
-                    parsed_result = {
-                        'parsed_prediction': parsed_prediction, 'ecr_1': ecr_1}
-                # save parsed results
-                if parsed_prediction == '':
-                    parsed_result['Parse@1'] = False
-                else:
-                    parsed_result['Parse@1'] = True
-                result['parsed_result'] = parsed_result
-                parsed_results.append(result)
-            write_json_to_file(
-                f'{PARSED_RUSULT_DIR}/{dir}/{os.path.basename(infernce_result_file)}', parsed_results, is_json_line=True)
+    for inference_result_file in iter_file_from_dir(f'{INFERENCE_RESULT_DIR}', '.jsonl'):
+        print(f'Parsing {inference_result_file}')
+        # === Load inference results ===
+        inference_results = read_json_file(inference_result_file)
+        if not isinstance(inference_results, list):
+            inference_results = [inference_results]
+        # === Parse inference results ===
+        parsed_results = parse_inference_results(inference_results)
+        # === Save parsed results ===
+        write_json_to_file(
+            f'{PARSED_RUSULT_DIR}/{os.path.basename(inference_result_file)}', parsed_results, is_json_line=True)
+    print('Parsing completed.')

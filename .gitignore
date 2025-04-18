@@ -119,3 +119,8 @@ dmypy.json
 .DS_Store
 table.csv
 table.json
+experiments/
+test*.py
+test*.json
+dev*.py
+dev*.json
