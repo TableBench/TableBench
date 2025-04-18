@@ -4,7 +4,7 @@
     <img alt="Code License" src="https://img.shields.io/badge/Code_License-MIT-f5de53%3F?color=green" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="" style="margin: 2px;">
-    <img alt="Data License" src="https://img.shields.io/badge/Data_License-CC--BY--SA--4.0-f5de53%3F?color=blue" style="display: inline-block; vertical-align: middle;"/>
+    <img alt="Data License" src="https://img.shields.io/badge/Data_License-Apache%20license%202.0-blue" style="display: inline-block; vertical-align: middle;"/>
   </a>
 </div>
 
@@ -24,7 +24,7 @@ Official repository for paper `TableBench: A Comprehensive and Complex Benchmark
 >  We’ve released an cleaner version of TableBench, after thoroughly reviewing all test set cases and correcting any errors we identified. Please download the latest version of [TableBench](https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableBench) for the most accurate dataset.
 >
 > 2. **🚀 Brand New Leaderboard**:
-> The brand new [Leaderboard](https://tablebench.github.io/) is now live! We’re excited to invite submissions, which will be dynamically updated in real-time. For submission guidelines, please refer to the Submission section in the leaderboard website.
+> The brand new [Leaderboard](https://tablebench.github.io/) is now live! We’re excited to invite submissions, which will be dynamically updated in real-time. For submission guidelines, please refer to the Submission section on the leaderboard website.
 >
 > 3. **🔍 Refined Evaluation Metrics**:
 > In response to community feedback and in-depth discussions, we've updated the evaluation metrics for Fact Checking, Numerical Reasoning, and Data Analysis. You can find the detailed specifications of these new metrics in Section `📐 Evaluation Metrics`
@@ -43,7 +43,7 @@ Official repository for paper `TableBench: A Comprehensive and Complex Benchmark
                   Analysis</b>, and <b>Visualization</b>—with <b>886</b> carefully curated test cases. TableBench
                 substantially pushes the boundaries of large language models in complex TableQA scenarios.
 <p align="center">
-<img src="assets/intro_case.png" width="50%" alt="McEval" />
+<img src="assets/intro_case.png" width="50%" alt="TableBench" />
 </p>
 
 ## 📐 Evaluation Metrics
