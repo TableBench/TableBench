@@ -18,7 +18,7 @@ Official repository for paper `TableBench: A Comprehensive and Complex Benchmark
 </p>
 
 ## News
-> **🔥Apr. 08, 2025🔥** 
+> **🔥Apr. 18, 2025🔥** 
 >
 > 1. **☀️ Enhanced TableBench**:
 >  We’ve released an cleaner version of TableBench, after thoroughly reviewing all test set cases and correcting any errors we identified. Please download the latest version of [TableBench](https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableBench) for the most accurate dataset.
@@ -34,7 +34,14 @@ Official repository for paper `TableBench: A Comprehensive and Complex Benchmark
 > We are thrilled to share that our paper has been accepted to AAAI 2025! We sincerely thank our co-authors, the anonymous reviewers, and all the researchers and users on GitHub or through email whose valuable feedback and support have greatly contributed to this work.
 
 ## 🧾 Overview
-**TableBench** is a comprehensive and complex benchmark covering **18** fields within four major categories of table question answering (TableQA) capabilitiesm with **886** test samples, which substantially pushes the limits of LLMs in TableQA scenarios.
+<code style="color:#8b44c7"><b>TableBench</b></code> is a <b>comprehensive</b> and <b>complex</b>
+                benchmark designed to evaluate Table
+                Question Answering (TableQA) capabilities, aligning closely with the "<code style="color:#8b44c7"><b>Reasoning Complexity of
+                Questions</b></code>" dimension in real-world Table QA scenarios. It covers <b>18</b> question
+                categories
+                across <b>4</b> major ategories—including <b>Fact Checking</b>, <b>Numerical Reasoning</b>, <b>Data
+                  Analysis</b>, and <b>Visualization</b>—with <b>886</b> carefully curated test cases. TableBench
+                substantially pushes the boundaries of large language models in complex TableQA scenarios.
 <p align="center">
 <img src="assets/intro_case.png" width="50%" alt="McEval" />
 </p>
@@ -68,13 +75,13 @@ This module defines evaluation metrics for various sub-tasks:
 
 ---
 
-# 🔧 How to evaluate on Tablebench
+## 🔧 How to evaluate on Tablebench
 
-## Step 1. Download the Dataset
+### Step 1. Download the Dataset
 
 Download the latest version of [**TableBench**](https://huggingface.co/datasets/Multilingual-Multimodal-NLP/TableBench) from Hugging Face and place it in your working directory.
 
-## Step 2. Run Inference with Your LLM
+### Step 2. Run Inference with Your LLM
 
 Use your preferred Large Language Model (LLM) to generate predictions for each test case. 
 
