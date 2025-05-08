@@ -76,7 +76,7 @@ class QAMetric(BaseMetric):
         # calculate F1,EM, ROUGE-L, SacreBLEU, Meteor
         em_score = compute_em(references=references, predictions=predictions)
         em_score_with_error_2 = compute_em_with_tolerance(
-            references=references, predictions=predictions, error_range=5)
+            references=references, predictions=predictions, error_range=2)
         em_score_with_error_5 = compute_em_with_tolerance(
             references=references, predictions=predictions, error_range=5)
         em_score_with_error_10 = compute_em_with_tolerance(
