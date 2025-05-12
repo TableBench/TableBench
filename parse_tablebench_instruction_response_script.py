@@ -18,6 +18,8 @@ def execute(c):
 
 
 def parse_dp_prediction(prediction):
+    if isinstance(prediction, list):
+        prediction = prediction[0]
     pattern = r"Final Answer: (.+)"
     try:
         match = re.search(pattern, prediction)
