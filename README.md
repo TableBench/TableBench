@@ -21,6 +21,8 @@ Official repository for paper `TableBench: A Comprehensive and Complex Benchmark
 </p>
 
 ## News
+
+- [EvalScope](https://github.com/modelscope/evalscope) supports TableBench text-answer evaluation with Mix_Metric (excluding visualization). See the [usage guide](https://evalscope.readthedocs.io/en/latest/benchmarks/tablebench.html).
 > **🔥Apr. 18, 2025🔥** 
 >
 > 1. **☀️ Enhanced TableBench**:
